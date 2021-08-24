@@ -12,8 +12,6 @@
 *   Creation Date:  18/08/2021                                                                             *
 *                                                                                                          *
 *   Created By:     Dan Rooney                                                                             *                                                                                                       
-*                   Amadeus Software Ltd                                                                   *                                                                                                       
-*                   Dan.Rooney@amadeus.co.uk                                                               *
 *                                                                                                          *                 
 *   Edit History:                                                                                          *
 *   +---------------+-------------+---------------------------------------------------------------------+  *
