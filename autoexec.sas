@@ -12,8 +12,6 @@
 *   Creation Date:  18/08/2021                                                                             *
 *                                                                                                          *
 *   Created By:     Dan Rooney                                                                             *                                                                                                       
-*                   Amadeus Software Ltd                                                                   *                                                                                                       
-*                   Dan.Rooney@amadeus.co.uk                                                               *
 *                                                                                                          *                 
 *   Edit History:                                                                                          *
 *   +---------------+-------------+---------------------------------------------------------------------+  *
@@ -26,7 +24,7 @@
 
 * Enter the path to the project root;
 
-%let root = C:\Users\Graduate July 2021\Documents\Business Analytics Case Study v1.4;
+%let root = ;
 
 *************************************************************************************************************************************************************************;
 
