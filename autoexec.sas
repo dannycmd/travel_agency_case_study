@@ -50,6 +50,9 @@
 
 %check_valid_path(path=&root)
 
+* Create folders referenced in libname statements if they do not exist already;
+options dlcreatedir;
+
 * Standard data libraries;
 filename input "&root\SAS\Data\Input";
 libname raw "&root\SAS\Data\Raw";
