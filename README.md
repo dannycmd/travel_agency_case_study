@@ -7,4 +7,4 @@ A travel agency has been collecting information on the individuals or families t
 
 1. Open autoexec.sas in a new SAS session and enter the path to the current directory, then run the autoexec.sas program.
 
-2. Either run the entire control.sas program, or open the file and run each section separately. Note: Sections A, B and C must be run in order.
+2. Either run the entire control.sas program, or open the file and run each section separately. **Note: Sections A, B and C must be run in order.**
