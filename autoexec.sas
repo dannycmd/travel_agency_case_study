@@ -68,6 +68,12 @@ libname shared "&root\SAS\Shared";
 * Autocall macro library;
 filename macros "&root\SAS\Macros";
 
+* Make use of a libname statement to create 'Logs' and 'Reports' folders - then unassign the librefs as the folders will not contain any SAS datasets;
+libname logs "&root\SAS\Logs";
+libname reports "&root\SAS\Reports";
+libname logs clear;
+libname reports clear;
+
 * Standard SAS options;
 options mautosource
         sasautos=(macros sasautos)
