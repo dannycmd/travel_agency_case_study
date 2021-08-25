@@ -263,7 +263,7 @@ title4 height=1 "'Primary Householder' column holds Boolean values, indicating w
 footnote "First 30 observations";
 %print_ds(in_ds = detail.households_detail, vars = customer_id primary_householder)
 title "Customer interests";
-%print_ds(in_ds = detail.households_detail, vars = customer_id mountaineering--trail)
+%print_ds(in_ds = detail.households_detail, vars = customer_id mountaineering water sight cycle climb dance hike ski snowboard white scuba yoga biking trail)
 title "Customers to be contacted by post";
 %print_ds(in_ds = marts.contact_post)
 title "Customers to be contacted by email";
