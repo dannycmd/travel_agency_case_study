@@ -108,20 +108,20 @@ run;
 data detail.households_detail;
     set staging.households_detail_4;
 
-    mountaineering = %interests_columns(AKL);
-    water = %interests_columns(B);
-    sight = %interests_columns(CX);
-    cycle = %interests_columns(D);
-    climb = %interests_columns(E);
-    dance = %interests_columns(FW);
-    hike = %interests_columns(HG);
-    ski = %interests_columns(J);
-    snowboard = %interests_columns(M);
-    white = %interests_columns(N);
-    scuba = %interests_columns(PQR);
-    yoga = %interests_columns(S);
-    biking = %interests_columns(TU);
-    trail = %interests_columns(VYZ);
+    mountaineering = %interests_columns(AKL)
+    water = %interests_columns(B)
+    sight = %interests_columns(CX)
+    cycle = %interests_columns(D)
+    climb = %interests_columns(E)
+    dance = %interests_columns(FW)
+    hike = %interests_columns(HG)
+    ski = %interests_columns(J)
+    snowboard = %interests_columns(M)
+    white = %interests_columns(N)
+    scuba = %interests_columns(PQR)
+    yoga = %interests_columns(S)
+    biking = %interests_columns(TU)
+    trail = %interests_columns(VYZ)
 
     if gender = &missing_gender then gender = ' ';
     if dob = &missing_dob then dob = .;
