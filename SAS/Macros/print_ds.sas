@@ -34,7 +34,7 @@
 
     %if %sysfunc(exist(&in_ds)) %then %do;
 
-        %check_variables_exist(&in_ds, &vars)
+        %if %length(&vars) > 0 %then %check_variables_exist(&in_ds, &vars);
 
         proc print data=&in_ds (obs=&num_obs) label noobs;
             %if %length(&vars) > 0 %then %do;

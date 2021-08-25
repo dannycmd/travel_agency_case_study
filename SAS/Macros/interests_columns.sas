@@ -1,25 +1,3 @@
-************************************************************************************************************
-*                                                                                                          *                                                                                                          
-*   Name:           interests_columns.sas                                                                  *
-*                                                                                                          *
-*   Description:    Used to create the Boolean interests columns in Section B.                             *
-*                                                                                                          *
-*   Parameters:     Required: interests                                                                    *
-*                                                                                                          *                                                                     
-*                   Optional:                                                                              *
-*                                                                                                          *
-*   Creation Date:  18/08/2021                                                                             *
-*                                                                                                          *
-*   Created By:     Dan Rooney                                                                             *                                                                                                       
-*                                                                                                          *                 
-*   Edit History:                                                                                          *
-*   +---------------+-------------+---------------------------------------------------------------------+  *
-*   |  Programmer   |   Date      |     Description                                                     |  *
-*   +---------------+-------------+---------------------------------------------------------------------+  *
-*   |               |             |                                                                     |  *
-*   +---------------+-------------+---------------------------------------------------------------------+  *
-************************************************************************************************************;
-
 %macro interests_columns(interests);
     %local len i args;
     %let len = %length(&interests);
@@ -33,5 +11,5 @@
 
         %end;
 
-    prxmatch("&args", interests) > 0
+    prxmatch("&args", interests) > 0;
 %mend;
