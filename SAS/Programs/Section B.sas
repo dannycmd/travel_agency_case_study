@@ -3,7 +3,7 @@
 *   Name:           Section B.sas                                                                          *
 *                                                                                                          *
 *   Description:    Prepare the datasets imported in Section A for analysis and reporting                  *
-*                   by creating new variables and joining data.                                            *
+*                   by creating new variables and joining data                                             *
 *                                                                                                          *
 *   Parameters:     Required:                                                                              *
 *                                                                                                          *                                                                     
@@ -12,6 +12,8 @@
 *   Creation Date:  18/08/2021                                                                             *
 *                                                                                                          *
 *   Created By:     Dan Rooney                                                                             *                                                                                                       
+*                   Amadeus Software Ltd                                                                   *                                                                                                        
+*                   Dan.Rooney@amadeus.co.uk                                                               *
 *                                                                                                          *                 
 *   Edit History:                                                                                          *
 *   +---------------+-------------+---------------------------------------------------------------------+  *
@@ -101,27 +103,42 @@ data staging.households_detail_4 / view=staging.households_detail_4;
     label primary_householder = "Primary Householder";
 run;
 
-* Each letter in the interests column of households_detail corresponds to an interest of the customer
+* Each letter code in the interests column of households_detail corresponds to an interest of the customer
   Add Boolean columns for each interest that indicate which activities each customer is interested in
   Reset missing values of gender and dob to their default values
-  The output dataset is the final version of households_detail;
+
+CODE	DESCRIPTION
+A,K,L	Mountaineering
+B	    Water Sports
+C,X	    Sightseeing
+D	    Cycling
+E	    Climbing
+F,W	    Dancing
+H,G	    Hiking
+J	    Skiing
+M	    Snowboarding
+N	    White Water Rafting
+P,Q,R	Scuba Diving
+S	    Yoga
+T,U	    Mountain Biking
+V,Y,Z	Trail Walking ;
 data detail.households_detail;
     set staging.households_detail_4;
 
-    mountaineering = %interests_columns(AKL)
-    water = %interests_columns(B)
-    sight = %interests_columns(CX)
-    cycle = %interests_columns(D)
-    climb = %interests_columns(E)
-    dance = %interests_columns(FW)
-    hike = %interests_columns(HG)
-    ski = %interests_columns(J)
-    snowboard = %interests_columns(M)
-    white = %interests_columns(N)
-    scuba = %interests_columns(PQR)
-    yoga = %interests_columns(S)
-    biking = %interests_columns(TU)
-    trail = %interests_columns(VYZ)
+    mountaineering = prxmatch('/A|K|L/i', interests) > 0;
+    water = prxmatch('/B/i', interests) > 0;
+    sight = prxmatch('/C|X/i', interests) > 0;
+    cycle = prxmatch('/D/i', interests) > 0;
+    climb = prxmatch('/E/i', interests) > 0;
+    dance = prxmatch('/F|W/i', interests) > 0;
+    hike = prxmatch('/H|G/i', interests) > 0;
+    ski = prxmatch('/J/i', interests) > 0;
+    snowboard = prxmatch('/M/i', interests) > 0;
+    white = prxmatch('/N/i', interests) > 0;
+    scuba = prxmatch('/P|Q|R/i', interests) > 0;
+    yoga = prxmatch('/S/i', interests) > 0;
+    biking = prxmatch('/T|U/i', interests) > 0;
+    trail = prxmatch('/V|Y|Z/i', interests) > 0;
 
     if gender = &missing_gender then gender = ' ';
     if dob = &missing_dob then dob = .;
